@@ -1,44 +1,40 @@
 <!DOCTYPE html>
-<html><head> <meta charset="UTF-8">
-   <title>students</title>
-</head>
+<!--
+Student Name: Robert Luke Stallard
+Project: Program 5 - CIT 140
+File Name: index.html
+Date: 3/25/2023
+Description: Displays Students from JSON file filtered by Major using GitHub website.
+-->
+<html lang="en">
 
-<body style='margin-left: 30px;'>
-   <h1>CIT7 Students</h1>
-      <p>CIT7 students: Exam Scores</p>
+	<head>
+		<title>Program 5 | Robert Luke Stallard</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+		<script src="script.js"></script>
+	</head>
 
-      <input type="button" id='btn' value="Get Student Scores">
-      <div id="result"></div>
+	<body>
+		<main>
+			<div class="container">
+				<h1>Select a Major</h1>
+				<button type="button" id="cit" class="btn btn-primary">CIT Majors</button>
+				<button type="button" id="bus" class="btn btn-primary">Business Majors</button>
+				<br><br>
+				<script type="text/x-handlebars-template" id="menuTemplate">
+					<table class="table table-striped">
+						<tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
+						{{#each students}}
+							<tr><td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td></tr>
+						{{/each}}
+					</table>
+				</script>
+			</div>
+		</main>
+	</body>
 
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {     // after page loads, more or less
-
-   document.querySelector('#btn').onclick = async function(){
-       var response = await fetch('exam_scores.json');        // ajax GET request
-
-       if(response.ok) {
-            var data = await response.json();         // 'data' holds an array of objects
-
-            var tableContents = "<table cellspacing='5'>"     // generate table
-            tableContents += "<tr><td>Name</td><td>Midterm</td><td>Final</td></tr>";
-
-            for(i = 0; i < data.length; i++) {
-                tableContents += `<tr><td> ${data[i].name} </td>
-                       <td> ${data[i].midterm} </td>    // make rows using template literals
-                       <td> ${data[i].final} </td></tr>`;
-            }
-
-            tableContents += "</table>";
-            document.querySelector('#result').innerHTML = tableContents;
-       }
-       else {
-            document.querySelector('#result').innerHTML = "Data not found";
-       }
-   };
-
-});
-</script>
-
-</body>
 </html>
