@@ -24,7 +24,7 @@ function getData(selected_meal) {
             	document.getElementById('menuTable').innerHTML = compiledHtml; 	
      	 	}
       	else {
-          	document.querySelector('#menuTable').innerHTML = "There was an error, or menu items not found";
+          	document.querySelector('#menuTable').innerHTML = "There was an error, or menu items not found2";
       	}
 	}
 
