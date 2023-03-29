@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	document.getElementsByClassName('majorsbtn').onclick = (event) => {
+	document.getElementsByClassName('majorsbtn').addEventListener('click', (event) => {
 		let selectedMajor = event.target.id.toUpperCase();
 		console.log(selectedMajor);
 		let studentTable = document.getElementById('studentTable');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 		request.send(null);
-	}
+	}, false);
 	
 });	
 /*
