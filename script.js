@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('DOM Content Loaded');
-	document.getElementById('breakfast').onclick = getData('breakfast');
-	document.getElementById('lunch').onclick = getData('lunch');
-	document.getElementById('dinner').onclick = getData('dinner');
+	document.getElementById('breakfast').onclick = function() {getData('breakfast');}
+	document.getElementById('lunch').onclick = function() {getData('lunch');}
+	document.getElementById('dinner').onclick = function() {getData('dinner');}
 });
 function getData(selected_meal) {
 	console.log(`${selected_meal} selected.`);
