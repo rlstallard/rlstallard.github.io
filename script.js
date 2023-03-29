@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.getElementById('breakfast').onclick = getData('breakfast');
 	document.getElementById('lunch').onclick = getData('lunch');
 	document.getElementById('dinner').onclick = getData('dinner');
-} 	
+});
 function getData(selected_meal) {
 	var request = new XMLHttpRequest();
   	request.open('GET', 'menu_items.json');     // open the request
