@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	document.getElementsByClassName('majorsBtn').onclick = (event) => {
+	document.getElementsByClassName('majorsbtn').onclick = (event) => {
 		let selectedMajor = event.target.id.toUpperCase();
 		console.log(selectedMajor);
 		let studentTable = document.getElementById('studentTable');
