@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		let request = new XMLHttpRequest();
 	  	request.open('GET', 'cit5students.json');     // open the request
 	  	request.onload = () => {
-	      	let data = JSON.parse(request.responseText);
+	      		let data = JSON.parse(request.responseText);
 			let students = data.filter( (student) => {
 				return student.major == selectedMajor;
 			});
