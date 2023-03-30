@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (request.status == 200) {
 				let templateText = document.getElementById('tableTemplate').innerHTML; //get template code
 				let compiledTemplateText = Handlebars.compile(templateText); //compile template code
-				let compiledHtml = compiledTemplateText({rows:students}); //apply compiled template code to html
+				let compiledHtml = compiledTemplateText({students:students}); //apply compiled template code to html
 				studentTable.innerHTML = compiledHtml;
 			} else {
 				studentTable.innerHTML = "There was an error."
