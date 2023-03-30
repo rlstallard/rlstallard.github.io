@@ -1,12 +1,12 @@
+/* Script for adding click events to buttons and creating Ajax request for cit5students.json and handlebars template compiling*/
 document.addEventListener('DOMContentLoaded', () => {
-	console.log('DOM Content Loaded');
-	document.getElementById('cit').addEventListener('click', getStudentsByMajor, false);
+	// add click events to buttons
+	document.getElementById('cit').addEventListener('click', getStudentsByMajor, false); 
 	document.getElementById('bus').addEventListener('click', getStudentsByMajor, false);
 	
 	function getStudentsByMajor() {
 		let studentTable = document.getElementById('studentTable');
 		let selectedMajor = event.target.id.toUpperCase();
-		console.log(selectedMajor);
 		let request = new XMLHttpRequest();
 	  	request.open('GET', 'cit5students.json');     // open the request
 	  	request.onload = () => {
@@ -26,17 +26,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		request.send(null);
 	}
 });	
-/*
-	async () => {
-		var res = await fetch('cit5students.json');
-		if(response.ok) {
-			var students = await res.json();
-			document.getElementById('cit').onclick = () => {
-				alert('cit clicked');
-			}
-			document.getElementById('bus').onclick = () => {
-				alert('bus clicked');
-			}
-		}
-	}
-*/
