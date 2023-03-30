@@ -1,13 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-	document.getElementsByClassName('majorsbtn').addEventListener('click', (event) => {
+	console.log('DOM Content Loaded');
+	document.getElementById('cit').addEventListener('click', getStudentsByMajor, false);
+	document.getElementById('bus').addEventListener('click', getStudentsByMajor, false);
+	
+	function getStudentsByMajor() {
+		let studentTable = document.getElementById('studentTable');
 		let selectedMajor = event.target.id.toUpperCase();
 		console.log(selectedMajor);
-		let studentTable = document.getElementById('studentTable');
 		let request = new XMLHttpRequest();
 	  	request.open('GET', 'cit5students.json');     // open the request
 	  	request.onload = () => {
 	      	let data = JSON.parse(request.responseText);
-			students = data.filter( (student) => {
+			let students = data.filter( (student) => {
 				return student.major == selectedMajor;
 			});
 			if (request.status == 200) {
@@ -20,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 		request.send(null);
-	}, false);
-	
+	}
 });	
 /*
 	async () => {
