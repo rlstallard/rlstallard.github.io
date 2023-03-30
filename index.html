@@ -25,7 +25,9 @@ Description: Displays Students from JSON file filtered by Major using GitHub web
 				<button type="button" id="cit" class="majorsbtn btn btn-primary">CIT Majors</button>
 				<button type="button" id="bus" class="majorsbtn btn btn-primary">Business Majors</button>
 				<br><br>
-				<script type="text/x-handlebars-template" id="studentTemplate">
+				<h3>We filter our students by major</h3>
+               			<div id="studentTable"></div>
+				<script type="text/x-handlebars-template" id="tableTemplate">
 					<table class="table table-striped">
 						<tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
 						{{#each students}}
