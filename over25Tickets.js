@@ -12,7 +12,6 @@
               const response = await fetch('tickets1.json');
               const allTickets = await response.json();
 			  this.tickets = allTickets.filter( (ticket) => ((ticket.actual_speed - ticket.posted_speed) >= 25) );
-			  console.log(this.tickets[0]);
           },
       }
     });
