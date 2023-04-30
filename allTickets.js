@@ -1,7 +1,7 @@
  let app = Vue.createApp({
       data() {
           return {
-              tickets: [],	// holds all ticket data in array
+              tickets: []	// holds all ticket data in array
           }
       },
       created() {
