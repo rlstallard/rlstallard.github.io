@@ -13,7 +13,7 @@
           async getData() {
               const response = await fetch('tickets1.json');
               this.tickets = await response.json();
-			  this.over25tickets = data.tickets.filter( (ticket) => (ticket.mph_over - ticket.posted_speed) >= 25 );
+			  this.over25tickets = this.tickets.filter( (ticket) => (ticket.actual_speed - ticket.posted_speed) >= 25 );
           },
       }
     });
