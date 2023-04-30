@@ -28,25 +28,23 @@ Description: Use Vue.js, bootstrap and ajax requests to retrieve speeding ticket
             </div>
         </nav>
 		<div id="allTicketsApp">
-			<div v-show="showTable">
-				<h2>All Speeding Tickets</h2>
-				<table class="table table-bordered table-striped">
-					<tr>
-						<th>Ticket ID</th>
-						<th>Time</th>
-						<th>Posted Speed</th>
-						<th>MPH Over</th>
-						<th>Violator Sex</th>
-					</tr>
-					<tr v-for = "ticket in tickets">
-						<td>{{ticket.tid}}</td>
-						<td>{{ticket.stop_time}}</td>
-						<td>{{ticket.posted_speed}}</td>
-						<td>{{ticket.actual_speed - ticket.posted_speed}}</td>
-						<td>{{ticket.violator_sex}}</td>
-					</tr>
-				</table>
-			</div>
+			<h2>All Speeding Tickets</h2>
+			<table class="table table-bordered table-striped">
+				<tr>
+					<th>Ticket ID</th>
+					<th>Time</th>
+					<th>Posted Speed</th>
+					<th>MPH Over</th>
+					<th>Violator Sex</th>
+				</tr>
+				<tr v-for = "ticket in tickets">
+					<td>{{ticket.tid}}</td>
+					<td>{{ticket.stop_time}}</td>
+					<td>{{ticket.posted_speed}}</td>
+					<td>{{ticket.actual_speed - ticket.posted_speed}}</td>
+					<td>{{ticket.violator_sex}}</td>
+				</tr>
+			</table>
 		</div>
         <div class="footer" style='clear:both;'>
             <p>&nbsp; &nbsp; &nbsp; &nbsp;&copy;2014 - St. Paul & Minneapolis Department of Transportation</p>
