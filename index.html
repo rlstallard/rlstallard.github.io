@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- 
+Student Name: Robert Luke Stallard
+Project: Program 6 - CIT 140
+File Name: index.html
+Date: 4/30/2023
+Description: Use Vue.js, bootstrap and ajax requests to retrieve speeding ticket data from json file and display in a table.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Tickets</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Speeding Tickets</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/">All Tickets</a></li>
+                    <li><a href="/25over">25 Miles & Over</a></li>
+                </ul>
+            </div>
+        </nav>
+		<div id="allTicketsApp">
+			<div v-show="showTable">
+				<h2>Students</h2>
+				<table class="table table-bordered table-striped">
+					<tr>
+						<th>Ticket ID</th>
+						<th>Time</th>
+						<th>Posted Speed</th>
+						<th>MPH Over</th>
+						<th>Violator Sex</th>
+					</tr>
+					<tr v-for = "ticket in tickets">
+						<td>{{ticket.tid}}</td>
+						<td>{{ticket.stop_time}}</td>
+						<td>{{ticket.posted_speed}}</td>
+						<td>{{ticket.actual_speed - ticket.posted_speed}}</td>
+						<td>{{ticket.violator_sex}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+        <div class="footer" style='clear:both;'>
+            <p>&nbsp; &nbsp; &nbsp; &nbsp;&copy;2014 - St. Paul & Minneapolis Department of Transportation</p>
+        </div>
+    </div>
+	<script src='allTickets.js'></script>
+</body>
+</html>
