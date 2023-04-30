@@ -14,7 +14,7 @@
               const response = await fetch('tickets1.json');
               this.tickets = await response.json();
 			  console.log(this.tickets[0]);
-			  this.over25tickets = await this.tickets.filter( (ticket) => ((ticket.actual_speed - ticket.posted_speed) >= 25) );
+			  this.over25tickets = tickets.filter( (ticket) => ((ticket.actual_speed - ticket.posted_speed) >= 25) );
 			  console.log(this.over25Tickets[0]);
           },
       }
