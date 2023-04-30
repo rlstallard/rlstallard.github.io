@@ -1,8 +1,8 @@
  let app = Vue.createApp({
       data() {
           return {
-          	tickets: [],	//holds all tickets
-	  	over25Tickets: []	//holds over 25 mph tickets
+              tickets: [],	//holds all tickets
+			  over25Tickets: []	//holds over 25 mph tickets
 			  
           }
       },
@@ -14,7 +14,7 @@
               const response = await fetch('tickets1.json');
               this.tickets = await response.json();
 			  console.log(this.tickets[0]);
-			  this.over25tickets = this.tickets.filter( (ticket) => (ticket.actual_speed - ticket.posted_speed) >= 25 );
+			  this.over25tickets = this.tickets.filter( (ticket) => ((ticket.actual_speed - ticket.posted_speed) >= 25) );
 			  console.log(this.over25Tickets[0]);
           },
       }
