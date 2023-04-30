@@ -2,7 +2,7 @@
       data() {
           return {
               tickets: [],	//holds all tickets
-			  over25Tickets: [],	//holds over 25 mph tickets
+			  over25Tickets: []	//holds over 25 mph tickets
 			  
           }
       },
